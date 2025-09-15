@@ -1,0 +1,10 @@
+version: 0.0
+Resources:
+  - MyEC2:
+      Type: AWS::EC2::Instance
+      Properties:
+        Name: trend-ec2
+hooks:
+  AfterInstall:
+    - location: scripts/restart_app.sh
+      timeout: 300
